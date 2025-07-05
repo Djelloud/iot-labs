@@ -10,13 +10,13 @@ Before diving into the detailed wiring instructions, check out these **actual ci
 
 | Sensor | Circuit Photo | Key Components |
 |--------|---------------|----------------|
-| **Dual-Color LED** | <img src="images/color_led_setup.jpg" alt="Color LED" width="300"/> | GPIO extension board, breadboard, LED module |
-| **Push Button** | <img src="images/button_setup.jpg" alt="Button" width="300"/> | Button module, LED indicators, pull-up resistors |
+| **Dual-Color LED** | <img src="images/auto_flash_led_setup.jpg" alt="Color LED" width="300"/> | GPIO extension board, breadboard, LED module |
+| **Push Button** | <img src="images/button_color_led_setup.jpg" alt="Button" width="300"/> | Button module, LED indicators, pull-up resistors |
 | **Ultrasonic** | <img src="images/ultrasonic_setup.jpg" alt="Ultrasonic" width="300"/> | HC-SR04 sensor, 5V power, trigger/echo pins |
 | **RGB LED** | <img src="images/rgb_led_setup.jpg" alt="RGB LED" width="300"/> | Common cathode RGB, current limiting resistors |
-| **Touch Sensor** | <img src="images/touch_setup.jpg" alt="Touch" width="300"/> | Capacitive touch module, feedback LEDs |
-| **Hall Effect** | <img src="images/hall_setup.jpg" alt="Hall" width="300"/> | Magnetic sensor, indicator LEDs |
-| **Tilt Sensor** | <img src="images/tilt_setup.jpg" alt="Tilt" width="300"/> | Gravity switch, status indicators |
+| **Touch Sensor** | <img src="images/touch_sensor_setup.jpg" alt="Touch" width="300"/> | Capacitive touch module, feedback LEDs |
+| **Hall Effect** | <img src="images/hall_effect_setup.jpg" alt="Hall" width="300"/> | Magnetic sensor, indicator LEDs |
+| **Tilt Sensor** | <img src="images/tilt_color_led_setup.jpg" alt="Tilt" width="300"/> | Gravity switch, status indicators |
 | **Laser Module** | <img src="images/laser_setup.jpg" alt="Laser" width="300"/> | **⚠️ SAFETY CRITICAL** - Laser diode module |
 | **Photo Interrupter** | <img src="images/photo_interrupter_setup.jpg" alt="Photo" width="300"/> | Optical sensor, infrared LED/phototransistor |
 
