@@ -1,0 +1,24 @@
+# Raspberry Pi GPIO Sensors Laboratory - Dependencies
+# =====================================================
+
+# Core GPIO library for Raspberry Pi
+RPi.GPIO>=0.7.0
+
+# Additional libraries for enhanced functionality (optional)
+# Uncomment if you plan to extend the project:
+
+# numpy>=1.21.0          # For advanced signal processing
+# matplotlib>=3.5.0      # For data visualization
+# flask>=2.2.0           # For web interface
+# paho-mqtt>=1.6.0       # For IoT communication
+# picamera>=1.13         # For camera integration
+# adafruit-circuitpython-dht>=3.7.0  # For DHT temperature sensors
+
+# Development and testing tools
+# pytest>=7.0.0          # For unit testing
+# black>=22.0.0          # For code formatting
+# flake8>=4.0.0          # For code linting
+
+# Note: RPi.GPIO is typically pre-installed on Raspberry Pi OS
+# Install with: pip3 install -r requirements.txt
+# Or on Raspberry Pi: sudo apt install python3-rpi.gpio 

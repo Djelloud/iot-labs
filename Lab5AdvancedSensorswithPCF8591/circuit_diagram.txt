@@ -1,0 +1,103 @@
+IoT Lab 5: Advanced Sensors with PCF8591 - Circuit Diagram
+==========================================================
+
+                     ┌─────────────────────┐
+                     │   Raspberry Pi 4    │
+                     │                     │
+         ┌───────────┤ 3.3V (Pin 1)        │
+         │           │ 5V   (Pin 2)        │
+         │       ┌───┤ SDA  (Pin 3/GPIO2)  │
+         │       │   │ SCL  (Pin 5/GPIO3)  │
+         │       │   │ GND  (Pin 6)        │
+         │       │   │ GPIO17 (Pin 11)     │◄──── DHT11 Data
+         │       │   │ GPIO11 (Pin 23)     │◄──── Rotary CLK
+         │       │   │ GPIO12 (Pin 32)     │◄──── Rotary DT
+         │       │   │ GPIO13 (Pin 33)     │◄──── Rotary SW
+         │       │   └─────────────────────┘
+         │       │
+         │       │   ┌─────────────────────┐
+         │       └───┤ SDA   PCF8591       │
+         │           │ SCL   ADC/DAC       │
+         └───────────┤ VCC   Module        │
+             ┌───────┤ GND                 │
+             │       │                     │
+             │       │ AIN0 ◄──────────────┼──── Photoresistor
+             │       │ AIN1 ◄──────────────┼──── Sound Sensor
+             │       │ AIN2 ◄──────────────┼──── Thermistor
+             │       │ AIN3 ◄──────────────┼──── Joystick X
+             │       │ AOUT                │
+             │       └─────────────────────┘
+             │
+             └─────── Common Ground
+
+Detailed Connections:
+====================
+
+1. PCF8591 Module:
+   - VCC → RPi 3.3V (Pin 1)
+   - GND → RPi GND (Pin 6)
+   - SDA → RPi GPIO2 (Pin 3)
+   - SCL → RPi GPIO3 (Pin 5)
+
+2. DHT11 Temperature/Humidity Sensor:
+   - VCC → RPi 3.3V
+   - GND → RPi GND
+   - DATA → RPi GPIO17 (Pin 11)
+
+3. Analog Joystick:
+   - VCC → RPi 3.3V
+   - GND → RPi GND
+   - VRX → PCF8591 AIN0 (X-axis)
+   - VRY → PCF8591 AIN1 (Y-axis)
+   - SW → PCF8591 AIN2 (Button)
+
+4. Photoresistor (Light Sensor):
+   - One leg → PCF8591 AIN0
+   - Other leg → GND
+   - 10kΩ resistor between AIN0 and VCC
+
+5. Sound Sensor:
+   - VCC → RPi 3.3V
+   - GND → RPi GND
+   - AO → PCF8591 AIN1
+
+6. Thermistor:
+   - One leg → PCF8591 AIN2
+   - Other leg → GND
+   - 10kΩ resistor between AIN2 and VCC
+
+7. Rotary Encoder:
+   - VCC → RPi 3.3V
+   - GND → RPi GND
+   - CLK → RPi GPIO11 (Pin 23)
+   - DT → RPi GPIO12 (Pin 32)
+   - SW → RPi GPIO13 (Pin 33)
+
+Voltage Divider Circuit for Analog Sensors:
+===========================================
+
+     VCC (3.3V)
+         │
+         │
+       ┌─┴─┐
+       │10k│ Fixed Resistor
+       └─┬─┘
+         │
+         ├──── To PCF8591 AIN Channel
+         │
+       ┌─┴─┐
+       │ R │ Variable Resistor (Sensor)
+       └─┬─┘
+         │
+        GND
+
+Notes:
+- Always use 3.3V, NOT 5V for PCF8591!
+- Add pull-up resistors (10kΩ) for I2C lines if needed
+- Use breadboard for prototyping
+- Double-check all connections before powering on
+
+I2C Address Configuration:
+=========================
+PCF8591 default address: 0x48
+To verify: sudo i2cdetect -y 1 

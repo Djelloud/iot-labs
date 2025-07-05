@@ -1,0 +1,10 @@
+# IoT Lab 5: Advanced Sensors with PCF8591 - Requirements
+# Install with: pip3 install -r requirements.txt
+
+# Core dependencies
+RPi.GPIO>=0.7.0
+smbus2>=0.4.0
+
+# Optional dependencies for enhanced features
+numpy>=1.19.0
+matplotlib>=3.3.0 
